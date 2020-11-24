@@ -43,15 +43,17 @@ public class AccountListDAOHibernateImpl implements AccountListDAO {
 	@Override
 	public List<TransactionsList> findAllTranssactions(int theAccountNumber) {
 		//get the current hibernate session
-				Session currentSession=entityManager.unwrap(Session.class);
+		
+ 				Session currentSession=entityManager.unwrap(Session.class);
  
 				//create a query
-				Query<TransactionsList>theQuery=currentSession.createQuery("from TransactionsList where account_number=:acn",TransactionsList.class);
- 
+		     	Query<TransactionsList>theQuery=currentSession.createQuery("from TransactionsList where account_number=:acn",TransactionsList.class);
+			//	List<TransactionsList>transactionsList=currentSession.createQuery("from TransactionsList l where l.account_number=:acn").setParameter("acn",theAccountNumber).list();
+
 				theQuery.setParameter("acn",theAccountNumber);
 				
 				//execute query and get result list
-				theQuery.executeUpdate();
+				//theQuery.executeUpdate();
 				List<TransactionsList>transactionsList=theQuery.getResultList();
 				//return the results
   		 		return transactionsList;

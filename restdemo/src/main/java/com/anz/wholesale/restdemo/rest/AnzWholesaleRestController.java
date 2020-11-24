@@ -34,8 +34,8 @@ public class AnzWholesaleRestController {
 	
 	// expose "/transactionList" and return list of transactions
 		@GetMapping("/accountlist/{accountNumber}")
-		public List<TransactionsList> findAllTransactions(@PathVariable("accountNumber") int theAccountNumber ){
-			return accountListService.findAllTransactions(theAccountNumber);
+		public List<TransactionsList> findAllTransactions(@PathVariable("accountNumber") int theAccountNumber){
+ 			return accountListService.findAllTransactions(theAccountNumber);
 		}
 	
 }

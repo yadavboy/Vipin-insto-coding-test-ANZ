@@ -18,7 +18,6 @@ public class TransactionsList {
 		@Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="transaction_id")
-		
 		private int transactionId;
 		
 		@Column(name="account_number")
@@ -40,7 +39,7 @@ public class TransactionsList {
 		private double creditAmount;
 		
 		@Column(name="Debit_Credit ")
-		private double DebitCredit ;
+		private String DebitCredit ;
 		
 		@Column(name="Transaction_narrative")
 		private String transactionNarrative;
@@ -52,7 +51,7 @@ public class TransactionsList {
 		}
 
 		public TransactionsList(int transactionId, int accountNumber, String accountName, Date balanceDate,
-				String currency, double debitAmount, double creditAmount, double debitCredit,
+				String currency, double debitAmount, double creditAmount, String debitCredit,
 				String transactionNarrative) {
 			super();
 			this.transactionId = transactionId;
@@ -123,11 +122,11 @@ public class TransactionsList {
 			this.creditAmount = creditAmount;
 		}
 
-		public double getDebitCredit() {
+		public String getDebitCredit() {
 			return DebitCredit;
 		}
 
-		public void setDebitCredit(double debitCredit) {
+		public void setDebitCredit(String debitCredit) {
 			DebitCredit = debitCredit;
 		}
 
